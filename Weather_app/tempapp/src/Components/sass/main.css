@@ -1,0 +1,43 @@
+.header .ribbon {
+  background-color: #E84E0E;
+  color: white;
+  padding: 0.2rem 2rem;
+}
+.header .ribbon .info_detail_wrapper {
+  margin-left: auto;
+  float: right;
+  display: flex;
+}
+.header .ribbon .info_detail_wrapper .details {
+  padding: 0rem 0.3rem;
+}
+.header .navbar {
+  background-color: black;
+}
+.header .navbar .navbar-brand {
+  color: white !important;
+}
+.header .navbar .navbar-light .navbar-nav .nav-link:hover {
+  color: white !important;
+}
+.header .navbar .nav-link.active, .header .navbar .navbar-light .navbar-nav .show > .nav-link {
+  color: #97ddfc !important;
+}
+.header .navbar-light .navbar-nav .nav-link {
+  color: white !important;
+}
+
+form {
+  max-width: 500px;
+  margin: auto;
+  padding: 2rem;
+}
+
+.banner_title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.w-100 {
+  max-width: 1200px !important;
+}/*# sourceMappingURL=main.css.map */

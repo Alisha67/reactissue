@@ -1,0 +1,53 @@
+
+// varaibles
+$dark-orange:#E84E0E;
+// black color
+$dark:black;
+// gray color
+$gray:rgb(196, 196, 196);
+
+.header{
+    .ribbon{
+        background-color: $dark-orange;
+        color:white;
+        padding: 0.2rem 2rem;
+        .info_detail_wrapper{
+            margin-left: auto;
+            float:right;
+            display: flex;
+            .details{
+                padding: 0rem 0.3rem;
+            }
+        }
+    }
+    .navbar{
+        background-color: $dark;
+        .navbar-brand{
+            color: white !important;
+        }
+        .navbar-light .navbar-nav .nav-link:hover {
+            color:white !important;
+        }
+         .nav-link.active, .navbar-light .navbar-nav .show>.nav-link {
+            color: #97ddfc !important;
+        }
+        
+        }
+        .navbar-light .navbar-nav .nav-link {
+            color:white !important;
+        }
+}
+
+form{
+    max-width: 500px;
+    margin: auto;
+    padding: 2rem;
+}
+.banner_title{
+    display: flex;
+    justify-content: space-between;
+}
+
+.w-100{
+   max-width: 1200px !important;
+}
