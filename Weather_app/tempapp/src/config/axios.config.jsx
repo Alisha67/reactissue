@@ -13,12 +13,12 @@ header:{                                             /*default header */
 }
 })
 
-axiosInstance.interceptors.response.use(
+   axiosInstance.interceptors.response.use(
 
-(sucess)=>{
+    (sucess)=>{
     return sucess;
-},
-(reject)=>{
+    },
+    (reject)=>{
     // todo
     throw reject?.response;
 }

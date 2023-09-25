@@ -79,7 +79,7 @@ const FormStyle = () => {
             localStorage.setItem('refreshToken' , response.data.data.refreshToken)
             localStorage.setItem('user' , JSON.stringify(response.data.data.userDetail))
              toast.success('you are successfully log in^^')
-            navigate('/admin')
+            navigate('/addmin')
             
             // toast.success("Welcome to admin panel")
             // return response

@@ -1,44 +1,75 @@
+import axiosInstance from "../../../config/axios.config";
 import HttpService from "../../../config/http.service";
 
-class BannerService extends HttpService{
-    createBanner= async (data)=>{
+class BannerService extends HttpService {
+    createBanner = async (data) => {
+        try {
+            let response = await this.postRequest(
+                '/v1/banner',
+                data,
+                { auth: true,
+                    file:true }
+            )
+            return response
+        } catch (exception) {
+            throw exception
+        }
+    }
+    updateBanner = async(data ,id)=>{
         try{
-let response = await this.postRequest(
-    '/v1/banner',
+let response = await this.putRequest(
+    '/v1/banner/'+id,
     data,
-    {auth:true}
+    {auth:true,file:true}
 )
 return response
-        } catch(exception){
+        }catch(exception){
             throw exception
         }
     }
 
-    listAllBannerData = async (perPage=10, page=1) => {
-        try{
-let response = await this.getRequest(
-    '/v1/banner?perPage='+perPage+'&page='+page,
-    {query: {perPage:perPage, page:page},
-    auth:true}
-    
-)
-return response
-        } catch(exception){
+    listAllBannerData = async (perPage = 10, page = 1) => {
+        try {
+            let response = await this.getRequest(
+                '/v1/banner?perPage=' + perPage + '&page=' + page,
+                {
+                    query: { perPage: perPage, page: page },
+                    auth: true
+                }
+
+            )
+            return response
+        } catch (exception) {
             throw exception
         }
 
     }
-    deleteBannerById = async (id)=>{
-        try{
-let response = await this.deleteRequest(
-    '/v1/banner/'+id ,
-    {auth:true}
-)
-return response
-        } catch(exception){
+    deleteBannerById = async (id) => {
+        try {
+            let response = await this.deleteRequest(
+                '/v1/banner/'+id,
+                { auth: true,
+              
+                }
+            )
+            return response
+        } catch (exception) {
+            throw exception
+        }
+    }
+    getBannerById = async (id) => {
+        try {
+            let response = await this.getRequest(
+                '/v1/banner/'+id,
+                { auth: true,
+              
+                }
+            )
+            return response
+        } catch (exception) {
             throw exception
         }
     }
 }
-const BannerSvc =new BannerService
+const BannerSvc = new BannerService
 export default BannerSvc

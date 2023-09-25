@@ -27,8 +27,7 @@ const Bannerlist = () => {
   }, [])
 
   const handleDelete = async (id) => {
-
-    Swal.fire({
+   Swal.fire({
       title: 'Are you sure?',
       text: "You won't be able to revert this!",
       icon: 'warning',
@@ -43,7 +42,7 @@ const Bannerlist = () => {
           let response = await BannerSvc.deleteBannerById(id)
           if (response) {
             toast.success(response.data.msg)
-          
+          setLoading(true)
             loadData()
           }
           return response;
@@ -100,7 +99,7 @@ const Bannerlist = () => {
                   bannerData && bannerData.map((item, index) => (
                     <tr key={index}>
                       <td>{item.title}</td>
-                      <td>{item.url}</td>
+                      <td>{item.link}</td>
                       <td>{item.image}</td>
                       <td>{item.status}</td>
                       <td>

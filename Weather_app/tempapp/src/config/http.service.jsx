@@ -42,6 +42,23 @@ class HttpService {
         }
     }
 
+
+    putRequest = async (url, data = {}, config = {}) => { //post and put same all just method farak
+        try {
+            this.setHeaders(config)
+            let response = await axiosInstance.put(
+                url,
+                data,
+                {
+                    headers: this._headers
+                }
+            )
+            return response;
+        } catch (exception) {
+            throw exception;
+        }
+    }
+
     postRequest = async (url, data = {}, config = {}) => {
         try {
             this.setHeaders(config)
@@ -60,7 +77,7 @@ class HttpService {
     deleteRequest = async (url, config = {}) => {
         try {
             this.setHeaders(config)
-            let response = await axiosInstance.deleteRequest(
+            let response = await axiosInstance.delete(
                 url,
                 {
                     headers: this._headers

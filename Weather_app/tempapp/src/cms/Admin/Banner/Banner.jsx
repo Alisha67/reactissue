@@ -129,7 +129,7 @@ const Banner = () => {
                         </div>
                         <div className="row">
                             <div className="col-sm-10 offset-sm-2">
-                                <button type="submit" disabled={loading} class="btn btn-success">Submit</button> &nbsp;
+                                <button type="submit" disabled={loading} class="btn btn-success">Create Banner</button> &nbsp;
                                 <button type="button" class="btn btn-success">Cancel</button>
 
                             </div>
