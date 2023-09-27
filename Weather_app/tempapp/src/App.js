@@ -46,6 +46,7 @@ import Bannerlist from './cms/Admin/Banner/banner.list';
 import AdminBannerEdit from './cms/Admin/Banner/Banner.edit';
 import Brandlist from './cms/Admin/Brand/Brandlist';
 import BrandCreate from './cms/Admin/Brand/BrandCreate';
+import AdminBrandEdit from './cms/Admin/Brand/Brand.edit';
 
 
 function App() {
@@ -136,6 +137,7 @@ user={{name:"alisha", address:"Balaju",city:"kathmandu"}} />  */}
      
             <Route path ="brand" element={<BrandCreate/>}/>
             <Route path ="brandlist" element={<Brandlist/>}/>
+            <Route path ="banner/:id" element={<AdminBrandEdit/>}/>
           </Route>
           <Route path='/*' element={<Page404 />} />
           </Routes>

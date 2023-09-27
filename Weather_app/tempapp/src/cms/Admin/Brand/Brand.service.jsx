@@ -15,7 +15,7 @@ class BrandService extends HttpService {
             throw exception
         }
     }
-    updateBanner = async(data ,id)=>{
+    updateBrand = async(data ,id)=>{
         try{
 let response = await this.putRequest(
     '/v1/brand/'+id,

@@ -2,7 +2,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import React, { useEffect } from 'react'
 import { useForm } from 'react-hook-form';
 import * as Yup from "yup"
-import BannerSvc from './Banner.service';
+
 import { toast } from 'react-toastify';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useState } from 'react';
@@ -76,9 +76,9 @@ const params = useParams();
 // edit the form code
 const getDetail= async ()=>{
   try{
-    let respone = await BannerSvc.getBannerById(params.id)
+    let respone = await BrandSvc.getBrandById(params.id)
     setValue("title" , respone.data.data.title)
-    setValue("link" , respone.data.data.link)
+    // setValue("link" , respone.data.data.link)
     setValue("status" , respone.data.data.status)
     // setValue("image" , respone.data.data.image) for img we cant set value like this becz url came from backend
     setDetail(respone.data)
@@ -126,16 +126,7 @@ console.log(detail)
                                 <span> {(errors && errors.title?.message) ? errors.title.message : ''}</span>
                             </div>
                         </div>
-                        <div class="form-group row">
-                            <label for="" class="col-sm-2 col-form-label">link</label>
-                            <div class="col-sm-10">
-                                <input type="url" class="form-control" id="" 
-                                //  defaultValue={detail?.link}
-                                {...register("link", { required: false })} />
-                               
-                                <span> {(errors && errors.link?.message) ? errors.link.message : ''}</span>
-                            </div>
-                        </div>
+              
                         <div class="form-group row">
                             <label for="" class="col-sm-2 col-form-label">status</label>
                             <div class="col-sm-10">

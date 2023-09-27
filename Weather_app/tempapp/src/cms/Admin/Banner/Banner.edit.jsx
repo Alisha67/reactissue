@@ -80,7 +80,7 @@ const getDetail= async ()=>{
     setValue("link" , respone.data.data.link)
     setValue("status" , respone.data.data.status)
     // setValue("image" , respone.data.data.image) for img we cant set value like this becz url came from backend
-    setDetail(respone.data)
+    setDetail(respone.data.data)
   }catch (exception){
     toast.error('Banner doesnt exist')
     navigate('/addmin/banner')
@@ -163,7 +163,7 @@ console.log(detail)
                           {
                             
                             detail && detail.image?
-                            <img src={process.env.REACT_APP_IMAGES_URL+'/uploads/banner/'+detail.image} alt="" className="img-fluid" />
+                            <img src={process.env.REACT_APP__IMAGE_URL+'/uploads/banner/'+detail.image} alt="" className="img-fluid" />
                         
                             :
                             <></>
