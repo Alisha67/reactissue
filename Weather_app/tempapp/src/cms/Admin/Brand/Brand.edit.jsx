@@ -35,7 +35,7 @@ const params = useParams();
 
             let response =await BrandSvc.updateBrand(data, params.id)
             toast.success('Sucessfully updated banner')
-            navigate('/addmin/bannerlist')
+            navigate('/addmin/brandlist')
             console.log(response)
         
 
@@ -84,7 +84,7 @@ const getDetail= async ()=>{
     setDetail(respone.data)
   }catch (exception){
     toast.error('Banner doesnt exist')
-    navigate('/addmin/brand')
+    navigate('/addmin/brandlist')
   }
 }
 
@@ -152,10 +152,10 @@ console.log(detail)
     
                             <div class="col-sm-2 col-form-label">
 
-                          {
+                            {
                             
                             detail && detail.image?
-                            <img src={process.env.REACT_APP_IMAGES_URL+'/uploads/banner/'+detail.image} alt="" className="img-fluid" />
+                            <img src={process.env.REACT_APP_IMAGE_URL+'/uploads/banner/'+detail.image} alt="" className="img-fluid" />
                         
                             :
                             <></>

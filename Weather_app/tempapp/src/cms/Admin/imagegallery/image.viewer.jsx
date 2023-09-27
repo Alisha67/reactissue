@@ -4,7 +4,7 @@ import 'lightgallery/css/lg-zoom.css';
 import 'lightgallery/css/lg-thumbnail.css';
 import lgThumbnail from 'lightgallery/plugins/thumbnail';
 import lgZoom from 'lightgallery/plugins/zoom';
-const LightBoxImage = (image)=>{
+const LightBoxImage = ({image})=>{
     const onInit = () => {
         console.log('lightGallery has been initialized');
     };

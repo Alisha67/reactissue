@@ -129,18 +129,21 @@ user={{name:"alisha", address:"Balaju",city:"kathmandu"}} />  */}
             <Route index path ="banner" element={<Banner/>}/>
             <Route path ="bannerlist" element={<Bannerlist/>}/>
             <Route path ="banner/:id" element={<AdminBannerEdit/>}/>
+            <Route path ="brand" element={<BrandCreate/>}/>
+            <Route path ="brandlist" element={<Brandlist/>}/>
+            <Route path ="brand/:id" element={<AdminBrandEdit/>}/>
        </Route>
        </Routes>
  {/* ============================for brandlist*/}
-          <Routes>
+          {/* <Routes>
         <Route path='/addmin' element={<Adminlayout />} >
      
             <Route path ="brand" element={<BrandCreate/>}/>
             <Route path ="brandlist" element={<Brandlist/>}/>
-            <Route path ="banner/:id" element={<AdminBrandEdit/>}/>
+            <Route path ="brand/:id" element={<AdminBrandEdit/>}/>
           </Route>
           <Route path='/*' element={<Page404 />} />
-          </Routes>
+          </Routes> */}
       </BrowserRouter>
     </>
   );

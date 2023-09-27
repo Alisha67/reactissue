@@ -33,7 +33,7 @@ const BrandCreate = () => {
         }else{
             let response =await BrandSvc.createBrand(data)
             toast.success(response.data.msg)
-            navigate('/addmin/brand')
+            navigate('/addmin/brandlist')
             console.log(response)
         }
 

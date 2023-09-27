@@ -102,10 +102,10 @@ const Bannerlist = () => {
                     <tr key={index}>
                       <td>{item.title}</td>
                   
-                      <td><LightBoxImage image={process.env.REACT_APP__IMAGE_URL+"/uploads/brand"+item.image}/></td>
+                      <td><LightBoxImage image={process.env.REACT_APP_IMAGE_URL+"/uploads/brand/"+item.image}/></td>
                       <td>{item.status}</td>
                       <td>
-                        <NavLink to={'/addmin/brand/'+item._id} className="btn btn-sm btn-info">Edit</NavLink>
+                        <NavLink to={'/addmin/brand/'+ item._id} className="btn btn-sm btn-info">Edit</NavLink>
                         <NavLink onClick={(e) => { e.preventDefault(); handleDelete(item._id) }} to={'/addmin/brand/' + item._id} className="btn btn-sm btn-danger">delete</NavLink>
                       </td>
                     </tr>

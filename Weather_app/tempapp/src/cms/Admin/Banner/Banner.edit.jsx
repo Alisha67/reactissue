@@ -163,7 +163,7 @@ console.log(detail)
                           {
                             
                             detail && detail.image?
-                            <img src={process.env.REACT_APP__IMAGE_URL+'/uploads/banner/'+detail.image} alt="" className="img-fluid" />
+                            <img src={process.env.REACT_APP_IMAGE_URL+'/uploads/banner/'+detail.image} alt="" className="img-fluid" />
                         
                             :
                             <></>
