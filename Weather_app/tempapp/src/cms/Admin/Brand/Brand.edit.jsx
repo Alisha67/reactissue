@@ -7,8 +7,9 @@ import { toast } from 'react-toastify';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import BrandSvc from './Brand.service';
 
-const AdminBannerEdit = () => {
+const AdminBrandEdit = () => {
     const navigate= useNavigate();
     const [loading ,setLoading] = useState(false);
 const [detail ,setDetail]= useState();  // for purano store baye ko form data 
@@ -32,7 +33,7 @@ const params = useParams();
         console.log(data);
         setLoading(true);
 
-            let response =await BannerSvc.updateBanner(data, params.id)
+            let response =await BrandSvc.updateBrand(data, params.id)
             toast.success('Sucessfully updated banner')
             navigate('/addmin/bannerlist')
             console.log(response)
@@ -83,7 +84,7 @@ const getDetail= async ()=>{
     setDetail(respone.data)
   }catch (exception){
     toast.error('Banner doesnt exist')
-    navigate('/addmin/banner')
+    navigate('/addmin/brand')
   }
 }
 
@@ -99,8 +100,8 @@ console.log(detail)
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                     <li class="breadcrumb-item"><NavLink to="/addmin/banner">DashBoard</NavLink></li>
-                        <li class="breadcrumb-item"><NavLink to="/addmin/bannerlist">bannerlist</NavLink></li>
-                        <li class="breadcrumb-item"><NavLink to="/addmin/bannerlist">Banner Form</NavLink></li>
+                        <li class="breadcrumb-item"><NavLink to="/addmin/brandlist">brandlist</NavLink></li>
+                        <li class="breadcrumb-item"><NavLink to="/addmin/brandform">Brand Form</NavLink></li>
                     </ol>
                 </nav>
                 <div class="card mb-4">
@@ -191,4 +192,4 @@ console.log(detail)
     )
 }
 
-export default AdminBannerEdit
+export default AdminBrandEdit

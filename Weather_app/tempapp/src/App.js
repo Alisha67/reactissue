@@ -44,6 +44,8 @@ import Admin from './cms/Admin/Admin';
 import Banner from './cms/Admin/Banner/Banner';
 import Bannerlist from './cms/Admin/Banner/banner.list';
 import AdminBannerEdit from './cms/Admin/Banner/Banner.edit';
+import Brandlist from './cms/Admin/Brand/Brandlist';
+import BrandCreate from './cms/Admin/Brand/BrandCreate';
 
 
 function App() {
@@ -85,7 +87,7 @@ user={{name:"alisha", address:"Balaju",city:"kathmandu"}} />  */}
       {/* <Routing/> */}
 
       <ToastContainer></ToastContainer>
-      <br />
+  
       <BrowserRouter>
         {/* <Navbar/> */}
 
@@ -119,23 +121,24 @@ user={{name:"alisha", address:"Balaju",city:"kathmandu"}} />  */}
             <Route path ="transaction" element={<Transaction list/>}/>
           </Route>
         </Routes> */}
-
+{/* for bannerlist route */}
       <Routes>
         <Route path='/addmin' element={<Adminlayout />} >
             {/* <Route index element={<Admin />} /> */}
             <Route index path ="banner" element={<Banner/>}/>
             <Route path ="bannerlist" element={<Bannerlist/>}/>
             <Route path ="banner/:id" element={<AdminBannerEdit/>}/>
-            <Route path ="category" element={<> category list </>}/>
-            <Route path ="user" element={<>user list </>}/>
-            <Route path ="order" element={<>order list </>}/>
-            <Route path ="transaction" element={<>transaction list</>}/>
-            <Route path ="product" element={<>banneer </>}/>
+       </Route>
+       </Routes>
+ {/* ============================for brandlist*/}
+          <Routes>
+        <Route path='/addmin' element={<Adminlayout />} >
+     
+            <Route path ="brand" element={<BrandCreate/>}/>
+            <Route path ="brandlist" element={<Brandlist/>}/>
           </Route>
           <Route path='/*' element={<Page404 />} />
           </Routes>
-
-
       </BrowserRouter>
     </>
   );
