@@ -47,6 +47,9 @@ import AdminBannerEdit from './cms/Admin/Banner/Banner.edit';
 import Brandlist from './cms/Admin/Brand/Brandlist';
 import BrandCreate from './cms/Admin/Brand/BrandCreate';
 import AdminBrandEdit from './cms/Admin/Brand/Brand.edit';
+import CategoryCreate from './cms/Admin/category/Category.create';
+import Categorylist from './cms/Admin/category/Category.list';
+import AdminCategoryEdit from './cms/Admin/category/Category.edit';
 
 
 function App() {
@@ -122,28 +125,25 @@ user={{name:"alisha", address:"Balaju",city:"kathmandu"}} />  */}
             <Route path ="transaction" element={<Transaction list/>}/>
           </Route>
         </Routes> */}
-{/* for bannerlist route */}
+
       <Routes>
         <Route path='/addmin' element={<Adminlayout />} >
             {/* <Route index element={<Admin />} /> */}
             <Route index path ="banner" element={<Banner/>}/>
             <Route path ="bannerlist" element={<Bannerlist/>}/>
             <Route path ="banner/:id" element={<AdminBannerEdit/>}/>
+
             <Route path ="brand" element={<BrandCreate/>}/>
             <Route path ="brandlist" element={<Brandlist/>}/>
             <Route path ="brand/:id" element={<AdminBrandEdit/>}/>
+
+            <Route path ="category" element={<CategoryCreate/>}/>
+            <Route path ="categorylist" element={<Categorylist/>}/>
+            <Route path ="category/:id" element={<AdminCategoryEdit/>}/>
+       
        </Route>
        </Routes>
- {/* ============================for brandlist*/}
-          {/* <Routes>
-        <Route path='/addmin' element={<Adminlayout />} >
-     
-            <Route path ="brand" element={<BrandCreate/>}/>
-            <Route path ="brandlist" element={<Brandlist/>}/>
-            <Route path ="brand/:id" element={<AdminBrandEdit/>}/>
-          </Route>
-          <Route path='/*' element={<Page404 />} />
-          </Routes> */}
+
       </BrowserRouter>
     </>
   );
