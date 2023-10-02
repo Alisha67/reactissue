@@ -96,7 +96,8 @@ const FormStyle = () => {
   
       if(token && user){
         toast.info('you are already logged In')
-        navigate('/'+user.role)
+        // navigate('/'+user.role)
+        navigate('/addmin')
       }
     
   },[])

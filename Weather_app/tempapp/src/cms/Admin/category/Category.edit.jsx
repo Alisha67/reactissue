@@ -101,14 +101,14 @@ console.log(detail)
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                     <li class="breadcrumb-item"><NavLink to="/addmin/category">DashBoard</NavLink></li>
-                        <li class="breadcrumb-item"><NavLink to="/addmin/categorylist">brandlist</NavLink></li>
-                        <li class="breadcrumb-item"><NavLink to="/addmin/categoryform">Brand Form</NavLink></li>
+                        <li class="breadcrumb-item"><NavLink to="/addmin/categorylist">categorylist</NavLink></li>
+                        <li class="breadcrumb-item"><NavLink to="/addmin/categoryform">category Form</NavLink></li>
                     </ol>
                 </nav>
                 <div class="card mb-4">
                     <div class="card-body">
                         <div className="banner_title">
-                            <h4>Banner Form</h4>
+                            <h4>Category Form</h4>
                             <button type="button" class="btn btn-secondary">Create Banner</button>
                         </div>
                     </div>

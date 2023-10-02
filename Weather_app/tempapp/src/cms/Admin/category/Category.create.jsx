@@ -1,5 +1,5 @@
 import { yupResolver } from '@hookform/resolvers/yup';
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useForm } from 'react-hook-form';
 import * as Yup from "yup"
 import { toast } from 'react-toastify';
@@ -7,13 +7,15 @@ import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import CategorySvc from './Category.service';
+import { NavItem } from 'react-bootstrap';
 
 
 const CategoryCreate = () => {
     const navigate= useNavigate();
     const [loading ,setLoading] = useState(false);
+    const [listOfCat ,setListOfCat] = useState();
     const CategorySchema = Yup.object({
-        title: Yup.string().required(),
+        name: Yup.string().required(),
       parent: Yup.string().nullable(),
         status :Yup.string().matches(/active|inactive/).default('active'),
         // image:Yup.object().nullable()
@@ -52,7 +54,7 @@ const CategoryCreate = () => {
         //validation of image  size and extension like .png .jpg
         let extension = (image.name.split('.')).pop();
         let size = image.size;
-        let allow = ['jpg', 'png', 'jpeg', 'gif', 'svg', 'bmp', 'webp']
+        let allow = ['jpg', 'png', 'jpeg', 'gif', 'svg', 'bmp', 'webp','PNG','JPEG']
         if (allow.includes(extension.toLowerCase())) {
             if (size <= 400000) {
                 setValue('image', image)
@@ -69,10 +71,25 @@ const CategoryCreate = () => {
     }
     // const inputField = watch('image')
     // console.log(inputField)
+
+// listing category in parent dropdown
+    const listALLCat = async() => {
+        try{
+            const list = await CategorySvc.listAllCategoryData();
+            setListOfCat(list.data.data);
+        }catch(exception){
+            throw exception
+        }
+    }
+
+useEffect(()=>{
+    listALLCat()
+},[])
+
     return (
         <>
         <div class="container-fluid px-4">
-                <h1 class="mt-4">Banner Manager</h1>
+                <h1 class="mt-4">Category Manager</h1>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                     <li class="breadcrumb-item"><NavLink to="/addmin/category">DashBoard</NavLink></li>
@@ -83,7 +100,7 @@ const CategoryCreate = () => {
                 <div class="card mb-4">
                     <div class="card-body">
                         <div className="banner_title">
-                            <h4>Brand Form</h4>
+                            <h4>Category Form</h4>
                             <button type="button" class="btn btn-secondary">Create Brand</button>
                         </div>
                     </div>
@@ -97,8 +114,8 @@ const CategoryCreate = () => {
                             <label for="" class="col-sm-2 col-form-label">Name</label>
                             <div class="col-sm-10">
                                 <input  type="text" class="form-control" id=""
-                                    {...register("title", { required: true })} />
-                                <span> {(errors && errors.title?.message) ? errors.title.message : ''}</span>
+                                    {...register("name", { required: true })} />
+                                <span> {(errors && errors.name?.message) ? errors.name.message : ''}</span>
                             </div>
                         </div>
                 
@@ -116,11 +133,25 @@ const CategoryCreate = () => {
                         <div class="form-group row">
                             <label for="" class="col-sm-2 col-form-label">Parent</label>
                             <div class="col-sm-10">
+                                <select  class="form-control"  {...register('parent', { required: false, value: "active" })} >
+                                    <option value="">--select one--</option>
+                                    {listOfCat && listOfCat.map((cat,index)=>(
+                                        <option key ={index} value={cat._id}>{cat.name}</option>
+                                    ))}
+                                  
+                                </select>
+                                <span> {(errors && errors.status?.message) ? errors.status.message : ''}</span>
+                            </div>
+                        </div>
+                        
+                        {/* <div class="form-group row">
+                            <label for="" class="col-sm-2 col-form-label">Parent</label>
+                            <div class="col-sm-10">
                                 <input  type="text" class="form-control" id=""
                                     {...register("parent", { required: true })} />
                                 <span> {(errors && errors.parent?.message) ? errors.parent.message : ''}</span>
                             </div>
-                        </div>
+                        </div> */}
                 
                         <div class="form-group row">
                             <label for="" class="col-sm-2 col-form-label">Images</label>

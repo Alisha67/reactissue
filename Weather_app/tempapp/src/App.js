@@ -50,6 +50,8 @@ import AdminBrandEdit from './cms/Admin/Brand/Brand.edit';
 import CategoryCreate from './cms/Admin/category/Category.create';
 import Categorylist from './cms/Admin/category/Category.list';
 import AdminCategoryEdit from './cms/Admin/category/Category.edit';
+import { Provider } from 'react-redux';
+import store from './store';
 
 
 function App() {
@@ -90,11 +92,11 @@ user={{name:"alisha", address:"Balaju",city:"kathmandu"}} />  */}
       {/* <HomeBootStrap/> */}
       {/* <Routing/> */}
 
-      <ToastContainer></ToastContainer>
-  
+    
+  <Provider store ={store}>
       <BrowserRouter>
         {/* <Navbar/> */}
-
+        <ToastContainer></ToastContainer>
         <Routes>
 
           <Route path='/blog' element={<Blog />} />
@@ -145,6 +147,7 @@ user={{name:"alisha", address:"Balaju",city:"kathmandu"}} />  */}
        </Routes>
 
       </BrowserRouter>
+      </Provider>
     </>
   );
 }

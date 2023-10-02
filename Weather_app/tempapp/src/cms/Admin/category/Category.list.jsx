@@ -13,7 +13,7 @@ const Categorylist = () => {
 
   const loadData = async () => {
     try {
-      let response = await  CategorySvc.listAllCategorydData(10, 1);
+      let response = await  CategorySvc.listAllCategoryData(10, 1);
       setBannerData(response.data.data)
       console.log(response)
       return response
@@ -73,7 +73,7 @@ const Categorylist = () => {
         <div class="card mb-4">
           <div class="card-body">
             <div className="banner_title">
-              <h4>Banner Form</h4>
+              <h4>Category form</h4>
               <button type="button" class="btn btn-secondary">Create Banner</button>
             </div>
           </div>
@@ -101,13 +101,13 @@ const Categorylist = () => {
                 </> : (
                   bannerData && bannerData.map((item, index) => (
                     <tr key={index}>
-                      <td>{item.title}</td>
+                      <td>{item.name}</td>
                   
-                      <td><LightBoxImage image={process.env.REACT_APP_IMAGE_URL+"/uploads/brand/"+item.image}/></td>
+                      <td><LightBoxImage image={process.env.REACT_APP_IMAGE_URL+"/uploads/category/"+item.image}/></td>
                       <td>{item.status}</td>
                       <td>
-                        <NavLink to={'/addmin/brand/'+ item._id} className="btn btn-sm btn-info">Edit</NavLink>
-                        <NavLink onClick={(e) => { e.preventDefault(); handleDelete(item._id) }} to={'/addmin/brand/' + item._id} className="btn btn-sm btn-danger">delete</NavLink>
+                        <NavLink to={'/addmin/category/'+ item._id} className="btn btn-sm btn-info">Edit</NavLink>
+                        <NavLink onClick={(e) => { e.preventDefault(); handleDelete(item._id) }} to={'/addmin/category/' + item._id} className="btn btn-sm btn-danger">delete</NavLink>
                       </td>
                     </tr>
                   ))
