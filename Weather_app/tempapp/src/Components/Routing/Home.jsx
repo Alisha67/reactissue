@@ -1,12 +1,17 @@
 import React from 'react'
-import { useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { NavLink } from 'react-router-dom'
-import { setLoggedInUser } from '../../reducers/user.reducer';
+
 
 const Home = () => {
-  const dispatch = useDispatch(); //action dispatch garney method ho
-  let loggedInUser = JSON.parse(localStorage.getItem('user'))?? null
-  dispatch(setLoggedInUser(loggedInUser));
+ 
+  // let loggedInUser = JSON.parse(localStorage.getItem('user'))?? null // yo chai local staorage bata ayeko user detail
+  
+  let loggedInUser = useSelector((rootStore)=>{  //listener
+    console.log(rootStore)
+   return rootStore.User?.loggedInUser
+  })    //store ma bayeko state lai hamro comp lay watch/listen garna paryo bane bane use hook useSeelctor
+
 
   return (
     <>
@@ -42,11 +47,17 @@ const Home = () => {
     <form className="form-inline my-2 my-lg-0">
       <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
       <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-
-      <div className="login__">
+  {
+    loggedInUser ? <>{loggedInUser.name}</>:
+    <>
+    
+    <div className="login__">
     <i className="fa-solid fa-cart-shopping"></i>
     <NavLink to="/login">login </NavLink>
     </div>
+    </>
+  }
+
     </form>
 
   </div>

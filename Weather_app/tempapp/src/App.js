@@ -18,7 +18,7 @@ import UsestateExample from './Components/UsestateExample';
 import DestructuringArray from './Components/DestructuringArray';
 import UseEffecthook1 from './Components/UseEffecthook1';
 import Navbar from './Components/Routing/Navbar';
-import Home from './Components/Routing/Home';
+
 import Contact from './Components/Routing/Contact';
 import About from './Components/Routing/About';
 import Page404 from './Components/Routing/Page404';
@@ -52,6 +52,8 @@ import Categorylist from './cms/Admin/category/Category.list';
 import AdminCategoryEdit from './cms/Admin/category/Category.edit';
 import { Provider } from 'react-redux';
 import store from './store';
+import Homelayout from './Components/Routing/Homelayout';
+import HomeBanner from './Components/Routing/HomeBanner';
 
 
 function App() {
@@ -100,7 +102,7 @@ user={{name:"alisha", address:"Balaju",city:"kathmandu"}} />  */}
         <Routes>
 
           <Route path='/blog' element={<Blog />} />
-          <Route index element={<Home />} />
+        
           <Route path='/contact' element={<Contact />} />
           <Route path='/activate/:token' element={<ActivateUser />} />
           {/* <Route path ='/activate' element={<ActivateUser/>}  /> */}
@@ -116,17 +118,17 @@ user={{name:"alisha", address:"Balaju",city:"kathmandu"}} />  */}
           {/* <Route path='/*' element={<Page404 />} /> */}
         </Routes>
 
-        {/* <Routes>
-          <Route path='/addmin' element={<Permission Component={<Adminlayout />} role='admin' />} >
-            <Route index element={<Admin />} />
-            <Route path ="banner" element={<Banner list/>}/>
-            <Route path ="brand" element={<Brand list/>}/>
-            <Route path ="category" element={< Category list/>}/>
-            <Route path ="user" element={< User list/>}/>
-            <Route path ="order" element={<Order list/>}/>
-            <Route path ="transaction" element={<Transaction list/>}/>
-          </Route>
-        </Routes> */}
+        {/* ====================homelayout */}
+        <Routes>
+        <Route path='/' element={<Homelayout />}>
+   <Route path ='/' element={<HomeBanner/>}/>
+        </Route>
+    
+        
+        
+      
+          </Routes>
+
 
       <Routes>
         <Route path='/addmin' element={<Adminlayout />} >

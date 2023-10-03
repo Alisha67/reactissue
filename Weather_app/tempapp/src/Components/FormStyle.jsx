@@ -5,6 +5,8 @@ import axiosInstance from '../config/axios.config';
 import authSvc from './Auth/auth.service';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { setLoggedInUser } from '../reducers/user.reducer';
 const labledesign = { color: 'Blue', fontWeight: 600 }
 
 const errortext = {
@@ -18,6 +20,8 @@ const FormStyle = () => {
     email: null,
     password: null
   });
+
+const dispatch = useDispatch(); //redux======================================
  const [error, setError] = useState();
  const navigate=useNavigate()
 // step 2 events
@@ -78,6 +82,7 @@ const FormStyle = () => {
             localStorage.setItem('token' , response.data.data.accessToken)
             localStorage.setItem('refreshToken' , response.data.data.refreshToken)
             localStorage.setItem('user' , JSON.stringify(response.data.data.userDetail))
+            dispatch(setLoggedInUser(response.data.data.userDetail))
              toast.success('you are successfully log in^^')
             navigate('/addmin')
             
