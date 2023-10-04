@@ -8,7 +8,7 @@ export const getLoggedIn = createAsyncThunk(  // 2ta parameter 1st is name of re
         if(token){
             //api call
             let userDetail = await authSvc.getLoggedInUser();
-            return userDetail;
+            return userDetail.data.data;
         }
         else{
             throw 'token not set'
@@ -28,6 +28,10 @@ const userSlicer = createSlice({
            state.loggedInUser = action.payload
 
         }
+        // ,
+        // resetLoggedInfo:(state,action)=>{
+        //     state.loggedInUser=null;
+        // }
     },
     extraReducer:(builder)=>{  //mathi ko api call lai bind gareko extra reducer ma
         builder.addCase(getLoggedIn.fulfilled,(state,action)=>{
