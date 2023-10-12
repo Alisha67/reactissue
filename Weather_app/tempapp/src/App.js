@@ -54,6 +54,14 @@ import { Provider } from 'react-redux';
 import store from './store';
 import Homelayout from './Components/Routing/Homelayout';
 import HomeBanner from './Components/Routing/HomeBanner';
+import Practise from './Components/Practise';
+import AdminUserlist from './cms/Admin/user/User.list';
+import AdminUserCreate from './cms/Admin/user/User.create';
+import AdminUserEdit from './cms/Admin/user/User.edit';
+import ProductList from './cms/Admin/product/ProductList';
+import ProductCreate from './cms/Admin/product/ProductCreate';
+import ProductEdit from './cms/Admin/product/ProductEdit';
+
 
 
 function App() {
@@ -102,7 +110,7 @@ user={{name:"alisha", address:"Balaju",city:"kathmandu"}} />  */}
         <Routes>
 
           <Route path='/blog' element={<Blog />} />
-        
+          <Route path='/practise' element={<Practise/>} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/activate/:token' element={<ActivateUser />} />
           {/* <Route path ='/activate' element={<ActivateUser/>}  /> */}
@@ -145,6 +153,14 @@ user={{name:"alisha", address:"Balaju",city:"kathmandu"}} />  */}
             <Route path ="categorylist" element={<Categorylist/>}/>
             <Route path ="category/:id" element={<AdminCategoryEdit/>}/>
        
+       
+            <Route path ="userslist" element={<AdminUserlist/>}/>
+            <Route path ="users" element={<AdminUserCreate/>}/>
+            <Route path ="category/:id" element={<AdminUserEdit/>}/>
+
+            <Route path ="productlist" element={<ProductList/>}/>
+            <Route path ="product" element={<ProductCreate/>}/>
+            <Route path ="product/:id" element={<ProductEdit/>}/>
        </Route>
        </Routes>
 

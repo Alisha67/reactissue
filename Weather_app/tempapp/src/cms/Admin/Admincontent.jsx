@@ -32,7 +32,7 @@ const Admincontent = () => {
                                     <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
                                     Category Manager
                                 </NavLink>
-                                <NavLink className="nav-link" to="/addmin/user">
+                                <NavLink className="nav-link" to="/addmin/users">
                                     <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
                                     Users Manager
                                 </NavLink>
