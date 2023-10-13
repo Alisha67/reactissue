@@ -61,27 +61,27 @@ const Categorylist = () => {
   return (
     <>
 
-      <div class="container-fluid px-4">
-        <h1 class="mt-4">Banner Manager</h1>
+      <div className="container-fluid px-4">
+        <h1 className="mt-4">Banner Manager</h1>
         <nav aria-label="breadcrumb">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item"><NavLink to="/addmin/category">DashBoard</NavLink></li>
-            <li class="breadcrumb-item"><NavLink to="/addmin/categorylist">Categorylist</NavLink></li>
+          <ol className="breadcrumb">
+            <li className="breadcrumb-item"><NavLink to="/addmin/category">DashBoard</NavLink></li>
+            <li className="breadcrumb-item"><NavLink to="/addmin/categorylist">Categorylist</NavLink></li>
 
           </ol>
         </nav>
-        <div class="card mb-4">
-          <div class="card-body">
+        <div className="card mb-4">
+          <div className="card-body">
             <div className="banner_title">
               <h4>Category form</h4>
-              <button type="button" class="btn btn-secondary">Create Banner</button>
+              <button type="button" className="btn btn-secondary">Create Banner</button>
             </div>
           </div>
         </div>
         <div ></div>
-        <div class="card mb-4"><div class="card-body">
+        <div className="card mb-4"><div className="card-body">
 
-          <table class="table">
+          <table className="table">
             <thead className='table-dark'>
               <tr>
                 <th scope="col">  Title</th>

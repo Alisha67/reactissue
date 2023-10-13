@@ -4,6 +4,7 @@ import HttpService from "../../../config/http.service";
 class ProductService extends HttpService {
     createProduct = async (data) => {
         try {
+           
             let response = await this.postRequest(
                 '/v1/product',
                 data,
@@ -12,6 +13,7 @@ class ProductService extends HttpService {
             )
             return response
         } catch (exception) {
+            console.log(exception)
             throw exception
         }
     }

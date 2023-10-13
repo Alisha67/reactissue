@@ -69,14 +69,14 @@ const ActivateUser = () => {
 
                     <form onSubmit={handleSubmit(SubmitForm)}>
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Password</label>  <span style={errmsg}> {errors && errors.password?.message}</span>
+                            <label htmlFor="exampleInputEmail1">Password</label>  <span style={errmsg}> {errors && errors.password?.message}</span>
                             <input type="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
                                 {...register('password', { required: true })}
                             />
                             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Confirm Password</label>  <span style={errmsg}> {errors && errors.confirmPassword?.message}</span>
+                            <label htmlFor="exampleInputPassword1">Confirm Password</label>  <span style={errmsg}> {errors && errors.confirmPassword?.message}</span>
                             <input type="password" name="confirmPassword" class="form-control" id="exampleInputPassword1"
                                 {...register('confirmPassword', { required: true })}
                             />

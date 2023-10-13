@@ -27,7 +27,7 @@ const [selectItem ,setSelectItem] = useState();
      
      onChange={handleCheckBox} 
      />
-    <label className="form-check-label" for="exampleCheck1">{sub}</label>  
+    <label className="form-check-label" htmlFor="exampleCheck1">{sub}</label>  
   </div>
     ))}
     <br/>

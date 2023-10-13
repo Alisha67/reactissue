@@ -93,7 +93,7 @@ const Banner = () => {
                     <form class="w-100" onSubmit={handleSubmit(SubmitEvent)}>
 
                         <div class="form-group row">
-                            <label for="" class="col-sm-2 col-form-label">Title</label>
+                            <label htmlFor="" class="col-sm-2 col-form-label">Title</label>
                             <div class="col-sm-10">
                                 <input  type="text" class="form-control" id=""
                                     {...register("title", { required: true })} />
@@ -101,14 +101,14 @@ const Banner = () => {
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="" class="col-sm-2 col-form-label">link</label>
+                            <label htmlFor="" class="col-sm-2 col-form-label">link</label>
                             <div class="col-sm-10">
                                 <input type="url" class="form-control" id=""    {...register("link", { required: false })} />
                                 <span> {(errors && errors.link?.message) ? errors.link.message : ''}</span>
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="" class="col-sm-2 col-form-label">status</label>
+                            <label htmlFor="" class="col-sm-2 col-form-label">status</label>
                             <div class="col-sm-10">
                                 <select  class="form-control"  {...register('status', { required: true, value: "active" })} >
                                     <option value={"active"}>publish</option>
@@ -118,7 +118,7 @@ const Banner = () => {
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="" class="col-sm-2 col-form-label">Images</label>
+                            <label htmlFor="" class="col-sm-2 col-form-label">Images</label>
                             <div class="col-sm-10">
                                 <input  type="file" class="form-control" id=""
                                     //    {...register('image', {required:true})}

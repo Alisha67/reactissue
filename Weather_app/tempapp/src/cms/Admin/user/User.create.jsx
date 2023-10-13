@@ -112,7 +112,7 @@ useEffect(()=>{
                     <form class="w-100" onSubmit={handleSubmit(SubmitEvent)}>
 
                         <div class="form-group row">
-                            <label for="" class="col-sm-2 col-form-label">Name</label>
+                            <label htmlFor="" class="col-sm-2 col-form-label">Name</label>
                             <div class="col-sm-10">
                                 <input  type="text" class="form-control" id=""
                                     {...register("name", { required: true })} />
@@ -121,7 +121,7 @@ useEffect(()=>{
                         </div>
                 
                         <div class="form-group row">
-                            <label for="" class="col-sm-2 col-form-label">status</label>
+                            <label htmlFor="" class="col-sm-2 col-form-label">status</label>
                             <div class="col-sm-10">
                                 <select  class="form-control"  {...register('status', { required: true, value: "active" })} >
                                     <option value={"active"}>publish</option>
@@ -132,7 +132,7 @@ useEffect(()=>{
                         </div>
                         
                         <div class="form-group row">
-                            <label for="" class="col-sm-2 col-form-label">Parent</label>
+                            <label htmlFor="" class="col-sm-2 col-form-label">Parent</label>
                             <div class="col-sm-10">
                                 <select  class="form-control"  {...register('parent', { required: false, value: "active" })} >
                                     <option value="">--select one--</option>
@@ -146,7 +146,7 @@ useEffect(()=>{
                         </div>
                         
                         {/* <div class="form-group row">
-                            <label for="" class="col-sm-2 col-form-label">Parent</label>
+                            <label htmlFor="" class="col-sm-2 col-form-label">Parent</label>
                             <div class="col-sm-10">
                                 <input  type="text" class="form-control" id=""
                                     {...register("parent", { required: true })} />
@@ -155,7 +155,7 @@ useEffect(()=>{
                         </div> */}
                 
                         <div class="form-group row">
-                            <label for="" class="col-sm-2 col-form-label">Images</label>
+                            <label htmlFor="" class="col-sm-2 col-form-label">Images</label>
                             <div class="col-sm-10">
                                 <input  type="file" class="form-control" id=""
                                     //    {...register('image', {required:true})}

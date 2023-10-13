@@ -125,7 +125,7 @@ console.log(detail)
                     <form class="w-100" onSubmit={handleSubmit(SubmitEvent)}>
 
                         <div class="form-group row">
-                            <label for="" class="col-sm-2 col-form-label">Title</label>
+                            <label htmlFor="" class="col-sm-2 col-form-label">Title</label>
                             <div class="col-sm-10">
                                 <input  type="text" class="form-control" id=""
                                 // defaultValue={detail?.title} 2nd case
@@ -135,7 +135,7 @@ console.log(detail)
                         </div>
               
                         <div class="form-group row">
-                            <label for="" class="col-sm-2 col-form-label">Categories</label>
+                            <label htmlFor="" class="col-sm-2 col-form-label">Categories</label>
                             <div class="col-sm-10">
                                 <select  class="form-control" 
                                 //  defaultValue={detail?.status}
@@ -149,7 +149,7 @@ console.log(detail)
 
                
                         <div class="form-group row">
-                            <label for="" class="col-sm-2 col-form-label">Description</label>
+                            <label htmlFor="" class="col-sm-2 col-form-label">Description</label>
                             <div class="col-sm-10">
                                 <textPath  type="text" class="form-control" id=""
                                 // defaultValue={detail?.title} 2nd case
@@ -159,7 +159,7 @@ console.log(detail)
                         </div>
 
                         <div class="form-group row">
-                            <label for="" class="col-sm-2 col-form-label">Title</label>
+                            <label htmlFor="" class="col-sm-2 col-form-label">Title</label>
                             <div class="col-sm-10">
                                 <input  type="text" class="form-control" id=""
                                 // defaultValue={detail?.title} 2nd case
@@ -168,26 +168,7 @@ console.log(detail)
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="" class="col-sm-2 col-form-label">Cost Price</label>
-                            <div class="col-sm-10">
-                                <input  type="text" class="form-control" id=""
-                                // defaultValue={detail?.title} 2nd case
-                                    {...register("title", { required: true })} />
-                                <span> {(errors && errors.title?.message) ? errors.title.message : ''}</span>
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="" class="col-sm-2 col-form-label">Price</label>
-                            <div class="col-sm-10">
-                                <input  type="text" class="form-control" id=""
-                                // defaultValue={detail?.title} 2nd case
-                                    {...register("title", { required: true })} />
-                                <span> {(errors && errors.title?.message) ? errors.title.message : ''}</span>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="" class="col-sm-2 col-form-label">Discount</label>
+                            <label htmlFor="" class="col-sm-2 col-form-label">Cost Price</label>
                             <div class="col-sm-10">
                                 <input  type="text" class="form-control" id=""
                                 // defaultValue={detail?.title} 2nd case
@@ -196,9 +177,28 @@ console.log(detail)
                             </div>
                         </div>
 
+                        <div class="form-group row">
+                            <label htmlFor="" class="col-sm-2 col-form-label">Price</label>
+                            <div class="col-sm-10">
+                                <input  type="text" class="form-control" id=""
+                                // defaultValue={detail?.title} 2nd case
+                                    {...register("title", { required: true })} />
+                                <span> {(errors && errors.title?.message) ? errors.title.message : ''}</span>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label htmlFor="" class="col-sm-2 col-form-label">Discount</label>
+                            <div class="col-sm-10">
+                                <input  type="text" class="form-control" id=""
+                                // defaultValue={detail?.title} 2nd case
+                                    {...register("title", { required: true })} />
+                                <span> {(errors && errors.title?.message) ? errors.title.message : ''}</span>
+                            </div>
+                        </div>
+
 
                         <div class="form-group row">
-                            <label for="" class="col-sm-2 col-form-label">Images</label>
+                            <label htmlFor="" class="col-sm-2 col-form-label">Images</label>
                             <div class="col-sm-8">
                                 <input  type="file" class="form-control" id=""
                                     //    {...register('image', {required:true})}

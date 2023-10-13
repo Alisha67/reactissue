@@ -81,26 +81,26 @@ const [loading, setLoading] = useState(false);
 
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="form-group">
-                    <label htmlfor="exampleInputEmail1">Name</label>
+                    <label htmlhtmlFor="exampleInputEmail1">Name</label>
                     <span style={errormsg}>{errors.name && errors.name?.message}</span>
                     <input {...register("name", { required: true })} type="text" className="form-control" aria-describedby="emailHelp" />
 
 
                 </div>
                 <div className="form-group">
-                    <label htmlfor="exampleInputPassword1">Email</label>
+                    <label htmlhtmlFor="exampleInputPassword1">Email</label>
                     <span style={errormsg}>{errors.email && errors.email?.message}</span>
                     <input {...register("email", { required: true })} type="email" className="form-control" />
 
                 </div>
                 <div className="form-group">
-                    <label htmlfor="exampleInputPassword1">Phone no</label>
+                    <label htmlhtmlFor="exampleInputPassword1">Phone no</label>
                     <span style={errormsg}>{errors.phone && errors.phone?.message}</span>
                     <input {...register("phone", { required: true })} type="text" className="form-control" />
 
                 </div>
                 <div className="form-group">
-                    <label htmlfor="exampleFormControlSelect1">Role</label>
+                    <label htmlhtmlFor="exampleFormControlSelect1">Role</label>
                     <span style={errormsg}>{errors.role && errors.role?.message}</span>
                     <select {...register("role", { required: true })} className="form-control" id="exampleFormControlSelect1">
                         <option>1</option>
@@ -112,19 +112,19 @@ const [loading, setLoading] = useState(false);
 
                 </div>
                 <div className="form-group">
-                    <label htmlfor="exampleInputPassword1">Address(shipping)</label>
+                    <label htmlhtmlFor="exampleInputPassword1">Address(shipping)</label>
                     <span style={errormsg}>{errors.address && errors.address['shippingAddress']?.message}</span>
                     <textarea {...register("address.shippingAddress.", { required: true })} className="form-control" rows="3"></textarea>
 
                 </div>
                 <div className="form-group">
-                    <label htmlfor="exampleInputPassword1">Billing</label>
+                    <label htmlhtmlFor="exampleInputPassword1">Billing</label>
                     <span style={errormsg}>{errors.address && errors.address['billingAddress']?.message}</span>
                     <textarea {...register("address.billingAddress", { required: true })} className="form-control" rows="3"></textarea>
 
                 </div>
                 <div className="form-group">
-                    <label htmlfor="exampleFormControlFile1">Example file input</label>
+                    <label htmlhtmlFor="exampleFormControlFile1">Example file input</label>
                     <span style={errormsg}>{errors.images && errors.images?.message}</span>
                     <input onChange={(e) => {
                         let image = e.target.files[0]

@@ -119,7 +119,7 @@ console.log(detail)
                     <form class="w-100" onSubmit={handleSubmit(SubmitEvent)}>
 
                         <div class="form-group row">
-                            <label for="" class="col-sm-2 col-form-label">Title</label>
+                            <label htmlFor="" class="col-sm-2 col-form-label">Title</label>
                             <div class="col-sm-10">
                                 <input  type="text" class="form-control" id=""
                                 // defaultValue={detail?.title} 2nd case
@@ -129,7 +129,7 @@ console.log(detail)
                         </div>
               
                         <div class="form-group row">
-                            <label for="" class="col-sm-2 col-form-label">status</label>
+                            <label htmlFor="" class="col-sm-2 col-form-label">status</label>
                             <div class="col-sm-10">
                                 <select  class="form-control" 
                                 //  defaultValue={detail?.status}
@@ -141,7 +141,7 @@ console.log(detail)
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="" class="col-sm-2 col-form-label">Images</label>
+                            <label htmlFor="" class="col-sm-2 col-form-label">Images</label>
                             <div class="col-sm-8">
                                 <input  type="file" class="form-control" id=""
                                     //    {...register('image', {required:true})}
