@@ -44,14 +44,27 @@ const ProductCreate = () => {
     try {
       console.log('hello');
       setLoading(true);
-      if (!data.image) {
-        setError("image", { message: "image is required" });
-      } else {
+      let caty =(data.categories.map((item)=>item.value)).join(",");
+      data.categories=caty;
+      console.log(data)
+      const formData = new FormData()
+      console.log(data)
+      Object.keys(data).map((fieldName)=>{
+        console.log(fieldName)
+        if(fieldName==='images'){
+          data.images.map((image)=>{
+            formData.append("images" ,image, image.name)
+          })
+        }else{
+          formData.append(fieldName , data[fieldName])
+        }
+      })
+   
         let response = await ProductSvc.createProduct(data);
         toast.success(response.data.msg);
-        navigate("/addmin/categorylist");
+        navigate("/addmin/productlist");
         console.log(response);
-      }
+      
     } catch (exception) {
       console.log(exception);
       toast.error(exception.data?.msg);

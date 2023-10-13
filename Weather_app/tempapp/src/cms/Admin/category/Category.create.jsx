@@ -28,6 +28,7 @@ const CategoryCreate = () => {
 
     const SubmitEvent =async(data) => {
     try{
+      
         console.log(data);
         setLoading(true);
         if(!data.image){
